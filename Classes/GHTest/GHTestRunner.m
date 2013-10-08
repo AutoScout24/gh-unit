@@ -293,6 +293,7 @@ operationQueue=operationQueue_;
         [self log:[NSString stringWithFormat:@"Error writing JUnit XML: %@\n", [error localizedDescription]]];
       } else {
         [self log:@"Wrote JUnit XML successfully.\n"];
+        [self log:[NSString stringWithFormat:@"##teamcity[publishArtifacts '%@']\n",[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/FailedTestImages/*"]]];
       }
     }
   }
